@@ -28,7 +28,6 @@ Select *
 From Portfolio.dbo.NashvilleHousing
 Order by ParcelID
 
-
 --Looks at which Property Adddresses have Null Values
 Select A.ParcelID,A.PropertyAddress,B.ParcelID,B.PropertyAddress,ISNULL(A.PropertyAddress,B.PropertyAddress)
 From Portfolio.dbo.NashvilleHousing A
@@ -65,7 +64,6 @@ SELECT
 SUBSTRING(PropertyAddress,1,CHARINDEX(',',PropertyAddress)-1) as Address
 , SUBSTRING(PropertyAddress,CHARINDEX(',',PropertyAddress)+1, LEN(PropertyAddress)) as Address
 From Portfolio.dbo.NashvilleHousing
-
 
 -- Adds address and city columns, populating it with the split data
 ALTER TABLE Portfolio.dbo.NashvilleHousing
@@ -150,7 +148,7 @@ DELETE
 From RowNumCTE
 Where row_num >1
 
--- Check Duplicates to make sure there are 0
+--Check Duplicates to make sure there are 0
 WITH RowNumCTE AS(
 Select *,
 	ROW_NUMBER() OVER(
@@ -169,7 +167,7 @@ From RowNumCTE
 Where row_num >1
 Order by PropertyAddress
 
---Delete Unused Columns
+-- Delete Unused Columns
 
 Select * 
 From Portfolio.dbo.NashvilleHousing
