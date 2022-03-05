@@ -1,6 +1,2 @@
 # Data-Cleaning-in-SQL
-SQL queries explored:
-  Standardize Date Format
-  Populating Null Values
-  Breaking out Property Address into Individual Columns (Address, City, State) with SUBTRING and PARSENAME
-  Changing Y and N to Yes and No
+Using a dataset on Nashville Housing, I explore some SQL queries on data cleaning such as renaming, converting, and adding data across columns.
